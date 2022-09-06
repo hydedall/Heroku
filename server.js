@@ -1,12 +1,11 @@
-
-require('dotenv').config();
+require('dotenv').config()
 
 //___________________
 //Dependencies
 //___________________
 const express = require('express');
 const methodOverride = require('method-override');
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connection;
 //___________________
@@ -24,7 +23,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 // Error / success
@@ -51,20 +50,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-
-//I
-//N
-//D
-//U
-//C
-//E
-//S
 
 //___________________
 //Listener
 //___________________
 app.listen(PORT, () => console.log('express is listening on:', PORT));
-
